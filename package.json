@@ -1,0 +1,40 @@
+{
+  "name": "origin-trace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Trace where a claim started, who repeated it, and whether a primary source exists, using live SerpApi search data.",
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "scripts": {
+    "start": "concurrently -k -n server,client -c blue,green \"npm:start:server\" \"npm:start:client\"",
+    "start:server": "tsx server/index.ts",
+    "start:client": "vite",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "npm run typecheck && vite build"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+    "@fontsource-variable/public-sans": "^5.3.0",
+    "@mantine/charts": "^7.17.8",
+    "@mantine/core": "^7.17.8",
+    "@mantine/hooks": "^7.17.8",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.13.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0"
+  }
+}
